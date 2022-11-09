@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tablas de X a X</title>
+</head>
+<body>
+    
+    <div class="inputs">
+        <input type="number" class="input" name="num1" id="num1">
+        <input type="number" class="input" name="num1" id="num2">
+
+    </div>
+  
+    <div id="tabla">
+        <table border="1">
+            <tr>
+                <td id="column1"></td>
+                <td id="column2"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+
+        const btnCalcularRango = document.getElementById('btnCalcularRange');
+
+        const column1 = document.getElementById('column1');
+        const column2 = document.getElementById('column2');
+
+
+        const btn1 = document.getElementById('num1')
+        const btn2 = document.getElementById('num2')
+
+        btn1.addEventListener('change', crearTablas)
+        btn2.addEventListener('change', crearTablas)
+      
+
+        function crearTablas(){
+            
+            const num1 = Number(document.getElementById('num1').value);
+            const num2 = Number(document.getElementById('num2').value);
+
+
+            let column1Content = "";
+            let column2Content = "";
+
+            let tabla="";
+
+
+            for(let i=num1; i<=num2; i++){
+
+                tabla = "";
+                tabla += `<table>`;
+                tabla += `<tr><th colspan="5">Tabla del ${i} </th></tr>`;
+
+                for(let j =1; j<=10; j++){
+                    
+                    tabla += ` 
+                        <tr>
+                            <td>${i}</td>
+                            <td>x</td>
+                            <td>${j}</td>
+                            <td>=</td>
+                            <td>${i *j}</td>
+                        </tr>
+                    `;
+
+                }
+                tabla += `</table>`;
+
+                if(i%2==0){
+
+                    column2Content+=tabla
+                }else{
+                    column1Content+=tabla
+                }
+
+                
+
+            }
+
+            column1.innerHTML = column1Content;            
+            column2.innerHTML = column2Content;            
+        }
+
+
+    </script>
+
+
+
+    <div class="grid">
+
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+
+    </div>
+
+</body>
+</html>

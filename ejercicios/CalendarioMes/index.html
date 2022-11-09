@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <input type="month" id="input-fecha" value="2022-10">
+   
+    <div class="panel-calendario">
+        <img src="arrow-left.svg" alt="#"  class="backMonth">
+        <div class="calendar"></div>
+        <img src="arrow-right.svg" alt="#" class="nextMonth">
+    </div>
+
+  
+ 
+
+    <script>
+        const calendarPanel = document.querySelector('.calendar');
+        const getFecha = document.getElementById('input-fecha');
+        let today = new Date();
+        const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"];
+        
+        getFecha.value.innerHTML = today.getFullYear()+"-"+today.getMonth();
+
+        console.log(getFecha.value)
+
+        const btnNext = document.querySelector(".nextMonth");
+        const btnBack = document.querySelector(".backMonth");
+
+        let mesActual;
+
+
+        addEventListener("load",()=>{
+            mesActual =parseInt(getFecha.value.split("-")[1])
+            let date = new Date(getFecha.value.split("-")[0]+"-"+mesActual)
+            calendarPanel.innerHTML = getCalendar(date.getFullYear(), date.getMonth());
+        })
+
+        btnNext.addEventListener("click",()=>{
+            mesActual++;
+            let date = new Date(getFecha.value.split("-")[0]+"-"+mesActual)
+            calendarPanel.innerHTML = getCalendar(date.getFullYear(), date.getMonth());
+
+        })
+
+        
+        btnBack.addEventListener("click",()=>{
+            mesActual--;
+            let date = new Date(getFecha.value.split("-")[0]+"-"+mesActual)
+            calendarPanel.innerHTML = getCalendar(date.getFullYear(), date.getMonth());
+
+        })
+
+
+        getFecha.addEventListener("change", ()=>{
+            mesActual =parseInt(getFecha.value.split("-")[1])
+            let date = new Date(getFecha.value)
+            calendarPanel.innerHTML = getCalendar(date.getFullYear(), date.getMonth());
+
+        })
+
+
+        function getCalendar(year, month){
+
+            let firstDay = (new Date(year, month)).getDay(); //Dia de la semana         
+            //new Date(year, month, 32).getDate()
+            /*
+                El "día 32" de cualquier mes pasará al siguiente. Si 
+                hay 31 días en un mes, el "día 32" será el 1 del mes 
+                siguiente. Si hay 30, el "día 32" será el 2 del mes 
+                siguiente. Si hay 28, el "día 32" será el 4 del mes 
+                siguiente. Reste cualquiera de estos de 32 y obtendrá 
+                el número correcto.
+            
+            */
+            let daysInMonth = 32 - new Date(year, month, 32).getDate();
+
+            let calendar = "<table>";
+            calendar +=`<caption>${months[month]}</caption>`;
+            calendar +=`
+                    <tr>
+                        <th>lun</th>
+                        <th>mar</th>
+                        <th>mie</th>
+                        <th>jue</th>
+                        <th>vie</th>
+                        <th>sab</th>
+                        <th>dom</th>
+                    </tr>
+            `;
+
+            if(firstDay === 0){
+                firstDay=7;
+            }
+
+            let date = 1;
+            for(let i =0; i<6; i++){
+                
+                calendar+="<tr>"
+                    for(let j =0; j<7; j++){
+
+                        if(i ===0 && j < firstDay-1){
+                            calendar+="<td></td>"
+                        }else if(date > daysInMonth){
+
+                            if(i*j%7==0){
+                                break;
+                            }
+
+                            calendar+="<td></td>"
+  
+                        }else{
+                            calendar +=`<td>${date}</td>`;
+                            date++;
+                        }
+                   
+                    }
+
+                calendar+="</tr>"
+            }
+
+            calendar+="</table>";
+
+            return calendar;
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

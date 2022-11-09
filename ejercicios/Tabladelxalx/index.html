@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tablas de X a X</title>
+</head>
+<body>
+    
+    <div class="inputs">
+        <input type="number" class="input" name="num1" id="num1">
+        <input type="number" class="input" name="num1" id="num2">
+
+    </div>
+  
+    <div id="tabla">
+
+
+
+    </div>
+
+    <script>
+
+        const tablaBox = document.getElementById("tabla");
+        const btnCalcularRango = document.getElementById('btnCalcularRange');
+
+
+        const btn1 = document.getElementById('num1')
+        const btn2 = document.getElementById('num2')
+
+        btn1.addEventListener('change', crearTablas)
+        btn2.addEventListener('change', crearTablas)
+      
+
+        function crearTablas(){
+            
+            const num1 = Number(document.getElementById('num1').value);
+            const num2 = Number(document.getElementById('num2').value);
+
+            let tablas="";
+
+
+            for(let i=num1; i<=num2; i++){
+
+               
+                tablas += `<table>`;
+                tablas += `<tr><th colspan="5">Tabla del ${i} </th></tr>`;
+
+                for(let j =1; j<=10; j++){
+                    
+                    tablas += ` 
+                        <tr>
+                            <td>${i}</td>
+                            <td>x</td>
+                            <td>${j}</td>
+                            <td>=</td>
+                            <td>${i *j}</td>
+                        </tr>
+                    `;
+
+                }
+                tablas += `</table>`;
+
+            }
+
+            tablaBox.innerHTML = tablas;            
+        }
+
+
+    </script>
+
+
+
+    <div class="grid">
+
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+        <div>   </div>
+
+    </div>
+
+</body>
+</html>

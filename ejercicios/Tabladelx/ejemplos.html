@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        "use strict" //Ej: Ahora hay que declarar la variable
+        let n=100;
+        console.log(n);
+        //alert(t);
+        console.log(typeof n);
+        console.log("jejejeje "+n)
+
+
+        window.addEventListener("click",()=>{
+            let age = prompt("Cuantos años tienes?", -1);
+            let confirmar = confirm("Estas seguro de que es tu edad?");
+            if(!confirmar){
+                age = prompt("Cuantos años tienes?", -1);
+            }
+
+            alert("Tienes "+age);
+
+        })
+
+
+
+        
+        
+    
+    </script>
+    
+</body>
+</html>

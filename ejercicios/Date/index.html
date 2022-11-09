@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p class="hoy"></p>
+
+
+
+
+    <script>
+        const hoyBox = document.querySelector(".hoy");
+
+        let fecha = new Date();
+        let days = ["Domingo","Lunes", "Martes","Miercoles","Jueves","Viernes","Sabado"];
+        let months = ["Enero","Febrero", "Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+        hoyBox.innerHTML = `Hoy es ${days[fecha.getDay()]} ${fecha.getDate()} de ${months[fecha.getMonth()]} de ${fecha.getFullYear()} `;
+        console.log(fecha.getDay());
+        
+
+    </script>
+    
+</body>
+</html>

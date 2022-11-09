@@ -1,0 +1,15 @@
+
+
+
+.preview{
+    border: 2px solid red;
+}
+
+.miniature{
+    width: 50px;
+}
+
+.product{
+    display: flex;
+    align-items: center;
+}

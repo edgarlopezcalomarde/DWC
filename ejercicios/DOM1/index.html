@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="btnEscribir">Escribir</button>
+
+
+    <div class="cajas">
+        
+        <div class="caja1">
+            Caja1
+        </div>
+        <div class="caja2">
+            Caja2
+        </div>
+
+    </div>
+
+    <script >
+
+        const btnEscribir = document.querySelector(".btnEscribir");
+        const caja1 = document.querySelector(".caja1");
+        const caja2 = document.querySelector(".caja2");
+
+        
+
+
+        btnEscribir.addEventListener("click",()=>{
+
+            let nClase = prompt("Introduce el nombre de la clase")
+            let texto = prompt("Introduce el texto que quieres escribir")
+
+            const p = document.createElement("p")
+            const txt = document.createTextNode(texto)
+            p.appendChild(txt)
+
+
+            if(caja1.classList.contains(nClase)){
+                //p.addEventListener("click", ()=>{alert("ha pulsao")})
+                caja1.appendChild(p)
+            }else if(caja2.classList.contains(nClase)){
+                caja2.appendChild(p)
+            }else{
+                document.body.appendChild(p)
+            }
+
+
+        })
+
+    </script>
+    
+</body>
+</html>

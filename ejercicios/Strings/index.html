@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="content">
+
+    </section>
+
+    <script>
+
+        const content = document.querySelector(".content");
+
+        let frase = "Hola buenos dias";
+
+        let primeraLetra = frase.charAt(0);
+
+        let primerLetraMinuscula = primeraLetra.toLowerCase();
+        let primerLetraMayusucula = primeraLetra.toUpperCase();
+        let buenos = frase.indexOf("buenos")
+        let existe  = frase.includes("dias")
+        let letraAscci = primeraLetra.charCodeAt();
+        let ascciLetra = String.fromCharCode(letraAscci);
+
+        console.log(frase.startsWith("Hola"))
+
+        content.innerHTML =ascciLetra;
+
+
+        let frase2 = " jjajajaaj ajajajaja jjajajaja "
+        console.log(frase2.trim());
+        console.log(frase2.trimEnd());
+        console.log(frase2.trimStart());
+
+
+        console.log(frase2.split(" "))
+    </script>
+
+
+    
+</body>
+</html>

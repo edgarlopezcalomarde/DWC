@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="title"></h1>
+    <div id="tabla">
+
+        
+        
+    </div>
+
+    <button id="btnCalcular">
+        <span class="button_top">Calcular</span>
+    </button>
+    
+
+    <script>
+      
+
+        const btnCalcular = document.getElementById("btnCalcular");
+
+        btnCalcular.addEventListener("click", ()=>{
+
+            let num = prompt("Dime una tabla?");
+
+            if(!isNaN(num)){
+                const tablaBox = document.getElementById("tabla"); 
+                const title = document.getElementById("title"); 
+
+            
+
+                let table = "<table border='1'>";
+
+                for(let i=1; i<=10; i++){
+
+                    table += ` 
+                        <tr>
+                            <td>${num}</td>
+                            <td>x</td>
+                            <td>${i}</td>
+                            <td>=</td>
+                            <td>${num *i}</td>
+                        </tr>
+                    `
+                }
+
+                table += "</table>";
+
+                
+                tablaBox.innerHTML = table;
+                title.innerHTML = "La tabla del "+num;
+            }else{
+                alert("ERROR - No es un numero")
+            }
+        })
+
+    </script>
+
+
+
+  
+    
+</body>
+</html>

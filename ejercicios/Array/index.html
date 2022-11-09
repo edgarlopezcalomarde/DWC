@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        /*
+
+        let fruits = ["peras","manzanas", "mandarinas"]
+
+        console.log(fruits.shift())
+        console.log(fruits)
+
+        for(let fruta of fruits){
+            console.log(fruta);
+        } 
+
+        fruits.splice(0,fruits.length)
+
+        console.log(fruits)
+
+
+
+        let nombre = ["edgar","nerea","ivan","pau","raquel","camila","pablo"]
+
+        nombre.forEach(n=>{
+            console.log(n)
+        })
+
+        nombre.forEach((n,i, nombres)=>{
+            console.log(`Me llamo ${n} me encuentro en la posicion ${i} del array: ${nombres}`)
+        })
+
+        */
+
+
+        let users =[
+            {id:1,name:"Edgar",age:21},
+            {id:2,name:"Pau",age:20},
+            {id:3,name:"Ivan",age:1000000}
+        ]
+    
+        console.log(users.find(user=> user.id == 1))//Elemento
+        console.log(users.findIndex(user=> user.id == 1)) //Index
+        console.log(users.filter(user=>user.id >=2)) //Array de elementos
+
+        let numeros = [1,2,3,4,5,6,7,8,9,10]
+
+        console.log(numeros.map(n=>n*7)) //Tabla del 7 en array
+
+
+        let arr = [1,15,2,70]
+       
+        console.log(arr.sort())  //1,15,2 ->Porque ordena por string
+        function compareNumeric(a,b){
+            if(a>b) return 1;
+            if(a==b) return 0;
+            if(a<b) return -1;
+        }
+
+        console.log(arr.sort((a,b)=>a-b)) //Ordena Numericamente
+
+        let a = [1,2,3,4,5]
+        let b = [1,2,3,4,5]
+        
+
+         
+
+    </script>
+    
+</body>
+</html>

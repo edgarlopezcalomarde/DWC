@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="header">
+        <nav class="menu">
+            <div class="menu__item">EddStore</div>
+            <div class="menu__item"> <input type="text" name="search" id="search" class="search"> </div>
+            <div class="menu__item">
+                <select id="filtro">
+                    <option value="0" selected>Default</option>
+                    <option value="1">Menor a Mayor</option>
+                    <option value="2">Mayor a Menor</option>
+                    <option value="3">Relevancia</option>
+                </select>
+            </div>
+            <div class="menu__item">
+                <img src="img/cart3.svg" class="img" id="btnCarrito"> 
+                <span class="basket">0</span>
+                
+            </div>
+        </nav>
+    </header>
+    <section class="products"></section>
+
+    <div class="modal-container oculto">
+        <div class="modal">
+            <div class="close">X</div>
+            <h2>Lista de productos</h2>
+            <div class="cart"></div>
+            <div class="total"></div>
+        </div>
+    </div>
+
+
+    <script src="carrito.js"></script>
+</body>
+</html>

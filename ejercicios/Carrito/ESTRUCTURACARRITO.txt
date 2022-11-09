@@ -1,0 +1,17 @@
+
+Carrito
+	constructor
+	 id
+	 fecha
+	 articulos[]
+	
+	addCart()
+	removeArticleOfCart()
+
+
+Articulo
+	id,
+	nombre,
+	precio,
+	unidades=1s,
+	descripcion

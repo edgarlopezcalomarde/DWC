@@ -1,0 +1,1683 @@
+-----------------------------------------------------------
+//Variables
+let nombre = "pedro"
+let firstName = "Edgar" //camelCase
+
+-----------------------------------------------------------
+//Nombres Validos para Variables
+let $ = 1; 
+let _ = 2;
+
+//Nombres Invalidos para Variables
+let 1a; 
+let my-name; 
+
+
+//Constantes
+const UWU = "jejexd"
+
+
+//Reglas para darle nombre a variables y constantes
+
+	● Utilice nombres legibles por humanos como userNameo shoppingCart
+
+	● Manténgase alejado de las abreviaturas o nombres cortos como a, b, c, a 
+	menos que realmente sepa lo que está haciendo.
+
+	● Haga que los nombres sean descriptivos y concisos al máximo. Ejemplos 
+	de malos nombres son datay value. Tales nombres no dicen nada. Está
+	bien usarlos si el contexto del código hace que sea excepcionalmente 
+	obvio a qué datos o valor hace referencia la variable.
+
+	● Acordad los términos dentro de su equipo y en su propia mente. Si un 
+	visitante del sitio se llama "usuario", deberíamos nombrar variables 
+	relacionadas currentUsero en newUserlugar de currentVisitor o 
+	newManInTown.
+
+
+//Backticks 
+nombre = "Edgar"
+`hola me llamo ${nombre}`
+
+
+//Operador typeof
+
+typeof undefined // "undefined"
+typeof 0 // "number"
+typeof 10n // "bigint"
+typeof true // "boolean"
+typeof "foo" // "string"
+typeof Symbol("id") // "symbol"
+typeof Math // "object" (1)
+typeof null // "object" (2)
+typeof alert // "function" (3)
+
+
+//Salida por pantalla
+alert("esto es spam") ->Alerta
+prompt("cuantos años tienes","crack") -> Alerta con input
+confirm("Estas seguro que deseas comprar este producto?") ->Alerta Si o No
+
+//Conversion de tipos 
+
+//Cadenas 
+let value = true
+value = String(value) //Any ->String
+
+//Numerica 
+let str = "123"
+Number(str) // String -> Number
+
+let result = "4"/"2" //Da como resultado 2 conversion directa
+ 
+
+//Booleana 
+Boolean(1) //true
+Boolean(0) //false
+
+Boolean("hello") //true
+Boolean("") //false
+  
+Boolean("0") //true
+Boolean("  ") //true
+
+parseInt("5") //String ->Int
+parseFloat("5.3") //String ->Float
+
+ 
+//Operadores 
+
+//Matematicos
+a + b -> Suma/Concatenacion
+a - b -> Resta
+a * b -> Multiplicacion
+a / b -> Division
+a % b -> Resto
+a ** b ->Exponenciacion
+
+//Incremento/Decremento
+a++
+b--
+
+// Asignacion
+a = b 
+
+
+//Relacionales
+a == b ->Comparadcion
+a === b ->Comparacion estricta
+a != b -> Distinto
+a !== b -> Distinto estricto
+a > b -> Mayor
+a >= b -> Mayor o igual
+a < b ->Menor
+a <=b ->Menor o igual
+
+//Logicos
+a || b -> A o B //OR
+a && b -> A y B //AND
+!a -> Distinto de a //NOT
+
+a ?? b //NUll SAFETY
+
+//Arrays
+
+let datosPersonales = ["edgar",21, "España"]
+let frutas = ["manzana", "pera", "melocoton"]
+document.write(frutas[3])
+
+
+//Arrays Asociativos
+
+let pc = {
+	nombre: "EdgarPC",
+	grafica: "RTX3060",
+	ram: "16GB"
+
+}
+
+document.write(pc["nombre"])
+
+
+//Bucles
+
+//WHILE
+
+let contador =0
+
+while(contador < 10){
+	//Codigo
+	contador++
+}
+
+
+//DO WHILE
+let contador = 0
+
+do{
+	//Codigo
+
+	contador++
+}while(contador <=15)
+
+
+//FOR
+for(let i = 0; i < 6; i++){
+
+	if(i == 5){
+		break;
+	}
+
+	//codigo
+}
+
+
+for(let i = 0; i < 6; i++){
+
+	if(i == 3){
+		continue;
+	}
+
+	//codigo
+}
+
+
+//FOR IN / FOR OF
+
+let juguetes = ["bakugan", "omnitrix", "playmobil"]
+
+
+for (juguete in juguetes ){
+	document.write(juguete)//0,1,2
+}
+
+
+for (juguete of juguetes ){
+	document.write(juguete)//"bakugan", "omnitrix", "playmobil"
+}
+
+
+
+//Terminar un for u otro
+
+array1 =["edgar", "ruben", "pablo"]
+array2 =["lopez","gomez","rodrigez"]	
+	
+
+forNombres:
+   for ( let array  in array2 ) {
+        if ( array == 2 ) {
+		for ( Let array of array1 ) {
+                    document.write ( array + " <br> " ) ;
+                    break forNombres;
+              	}
+		
+        }else {
+		document.write ( array2 [ array ] + " <br> " )
+        }
+}
+     
+//Funciones
+
+//1
+function saludar(nombre){
+	alert("Hola me llamo"+nombre)
+}
+     
+saludar("Pepe")
+
+//Funcion que retorna un valor
+function saludar(){
+	return "heyyyy"
+}
+     
+let saludo = saludar()
+
+
+
+//2
+let saludar = function(){
+	alert("Hola ma G")
+}
+
+saludar()
+
+
+//3
+
+const saludar = (nombre) =>{
+	document.write(`Hola ${nombre} ¿Como Estas?`)
+}
+
+
+//como solo le pasamos un parametro a la funcion anonima
+const saludar = nombre =>{
+	document.write(`Hola ${nombre} ¿Como Estas?`)
+}
+
+
+//y ademas la simplificamos
+const saludar = nombre => document.write(`Hola ${nombre} ¿Como Estas?`)
+
+saludar("Manuel")
+
+
+//POO
+
+
+class Animal{
+	constructor(especie, edad, color){
+		this.especie = especie
+		this.edad = edad
+		this.color = color
+		this.info = `Soy un ${this.especie}, tengo ${this.edad} años
+		y soy de color ${this.color}`
+	}
+	
+	verInformacion(){
+		document.write(this.info + "<br>")
+	}
+} 
+
+
+let perro = new Animal("perro",10,"marron")
+let gato = new Animal("gato",10,"marron")
+let pajaro = new Animal("pajaro",10,"marron")
+
+console.log(perro)
+console.log(perro.color)
+console.log(perro.info)
+
+perro.verInformacion()
+gato.verInformacion()
+pajaro.verInformacion()
+
+//Polimorfismo
+
+class Animal{
+	constructor(especie, edad, color){
+		this.especie = especie
+		this.edad = edad
+		this.color = color
+		this.info = `Soy un ${this.especie}, tengo ${this.edad} años
+		y soy de color ${this.color}`
+	}
+	
+	verInformacion(){
+		document.write(this.info + "<br>")
+	}
+	
+	ladrar(){
+		if(this.especie == "perro"){
+			document.write("WaW!"+"<br>")
+		}else{
+			document.write("No puede ladrar ya que es un "+this.especie+"<br>")
+		}
+	}
+}
+
+
+let perro = new Animal("perro",10,"marron")
+let gato = new Animal("gato",10,"marron")
+let pajaro = new Animal("pajaro",10,"marron")
+
+perro.ladrar()
+gato.ladrar()
+pajaro.ladrar()
+
+//Herencia
+
+class Animal{
+	constructor(especie, edad, color){
+		this.especie = especie
+		this.edad = edad
+		this.color = color
+		this.info = `Soy un ${this.especie}, tengo ${this.edad} años
+		y soy de color ${this.color}`
+	}
+	
+	verInformacion(){
+		document.write(this.info + "<br>")
+	}
+	
+}
+
+
+class Perro extends Animal{
+
+	constructor(especie, edad, color, raza){
+		super(especie, edad, color)
+		this.raza = raza
+	
+	}
+	
+	ladrar(){
+		alert("WaW")
+	}
+
+}
+
+
+let perro = new Perro("perro",10,"marron", "terrier")
+
+perro.ladrar()
+
+//Metodos Estaticos
+//Estos no necesitan que la clase se defina para ser llamados
+
+class Animal{
+	constructor(especie, edad, color){
+		this.especie = especie
+		this.edad = edad
+		this.color = color
+		this.info = `Soy un ${this.especie}, tengo ${this.edad} años
+		y soy de color ${this.color}`
+	}
+	
+	verInformacion(){
+		document.write(this.info + "<br>")
+	}
+	
+}
+
+
+class Perro extends Animal{
+
+	constructor(especie, edad, color, raza){
+		super(especie, edad, color)
+		this.raza = raza
+	
+	}
+	
+	static ladrar(){
+		alert("WaW")
+	}
+
+}
+
+Perro.ladrar()
+
+//Metodos get y set
+
+class Animal{
+	constructor(especie, edad, color){
+		this.especie = especie
+		this.edad = edad
+		this.color = color
+		this.info = `Soy un ${this.especie}, tengo ${this.edad} años
+		y soy de color ${this.color}`
+	}
+	
+	verInformacion(){
+		document.write(this.info + "<br>")
+	}
+	
+}
+
+
+class Perro extends Animal{
+
+	constructor(especie, edad, color){
+		super(especie, edad, color)
+		this.raza = null
+	
+	}
+	
+	static ladrar(){
+		alert("WaW")
+	}
+	
+	set setRaza(raza){
+		this.raza = raza
+	}
+	
+	get getRaza(){
+		return this.raza
+	}
+
+}
+
+
+let perro = Perro("perro", 7, "white")
+perro.setRaza = "terrier"
+alert(perro.getRaza)
+
+//Funciones para Cadenas(TEXTOS)
+
+concat ( ) junta dos o mas cadenas y retorna una nueva
+startsWith ( ) si una cadena comienza con los caracteres de otra cadena , devuelve true , sino devuelve false .
+endsWith ( ) si una cadena termina con los caracteres de otra cadena , devuelve true , sino devuelve false .
+includes ( ) - si una cadena puede encontrarse dentro de otra cadena , devuelve true , sino devuelve false .
+indexOf ( ) - devuelve el indice del primer caracter de la cadena , si no existe , devuelve -1
+lastIndexOf ( ) - devuelve el ultimo indice del primer caracter de la cadena , si no existe , devuelve -1
+
+repeat() - devuelve la cadena repetida el numero de veces que le indiques
+
+split ( ) Divide la cadena como le pidamos
+substring ( ) - Nos retorna un pedazo de la cena que seleccionamos
+toLowerCase ( ) - Convierte una cadena a minúscula
+toUpperCase ( ) - Convierte una cadena a mayúscula
+tostring ( ) - método devuelve una cadena que representa al objeto especificado .
+trim ( ) elimina los espacios en blanco al principio y al final de una cadena .
+trimEnd ( ) - elimina los espacios en blanco al final de una cadena .
+trimstart ( ) - elimina los espacios en blanco al comienzo de una cadena ..
+valueof ( ) retorna el valor primitivo de un objeto string 
+       -
+let cadena = "hola me llamo"
+document.write(cadena.concat("edgar"))
+
+let cadena = "hola me llamo"
+document.write(cadena.startsWith("hola")) //true
+
+let cadena = "hola me llamo"
+document.write(cadena.endsWith("llamo")) //true
+
+let cadena = "Me gusta mucho el chocolate"
+document.write(cadena.includes("mucho")) //true
+
+let cadena = "Me gusta mucho el chocolate"
+document.write(cadena.indexOf("mucho")) //10 -> la posicion en la que se encuentra la palabra
+
+
+let cadena = "Me gusta mucho mucho mucho mucho el chocolate"
+document.write(cadena.lastIndexOf("mucho")) //27
+let cadena = "jaja"
+document.write(cadena.repeat(3)) 
+
+
+let cadena = "hola, como, estas"
+let resultado = cadena.split(",") //["hola", "como", "estas"]
+document.write(resultado[0])
+
+
+let cadena = "ABCDEFG"
+let resultado = cadena.substring(0,2) //AB
+document.write(resultado)
+
+let cadena = "ABCDEFG"
+document.write(cadena.toLowerCase())//Minuscula
+document.write(cadena.toUpperCase())//Mayuscula
+
+document.write(5.toString())//Numero to String
+
+let cadena = "hola a todos"
+document.write(cadena.length)//numero de caracteres
+
+
+let cadena = "   eddy   "
+document.write(cadena.trim())//Quita los espacios que hay por delante y por detras
+document.write(cadena.trimEnd())//Quita los espacios que hay por delante
+document.write(cadena.trimstart())//Quita los espacios que hay por detras
+
+//Metodos de Array
+
+//Transformadores
+pop () elimina el último elemento de un array y lo devuelve .
+shift () elimina el primer elemento de un array y lo devuelve .
+push() agrega un elemento al array al final de la lista .
+reverse () invierte el orden de los elementos de un array .
+unshift () agrega uno o más elementos al inicio del array , y devuelve la nueva longitud del array .
+sort ()  ordena los elementos de unarreglo ( array ) localmente y devuelve el arreglo ordenado .
+splice () cambia el contenido de un array eliminando elementos existentes y / o agregando nuevos elementos .
+
+
+let nombres = ["paco", "ruben", "pablo", "rauel", "luis"]
+nombres.pop() //Remueve el ultimo elemento del array y devuelve una string con ese elemento 
+nombres.shift() //Remueve el primer elemento del array y devuelve una string con ese elemento 
+nombres.push("Juan") //Agrega un elemento al final de la vista
+nombres.push("Edgar", "Beto") /Se puede agregar varios
+nombres.reverse() //nos devueleve un nuevo array con los elemetos del anterior a la inversa
+ 
+let numeros = [3,4,5]
+numeros.unshift(0,1,2) // Agrega uno o mas elementos al principio del array
+ 
+numeros.sort() //Ordena el array
+
+let frutas = ["pera", "manzana", "platano", "melon", "guayaba"]
+numeros.splice(1,3) // me quedo solo con pera["pera", "guayaba"] porque elimna los elementos de la posicon 1 a la 3.
+
+let frutas = ["pera", "manzana", "platano", "melon", "guayaba"]
+numeros.splice(1,3, "kiwi") // me quedo  con pera["pera","kiwi", "guayaba"] 
+
+let frutas = ["pera", "manzana", "platano", "melon", "guayaba"]
+numeros.splice(0,0, "kiwi") // ["kiwi","pera", "manzana", "platano", "melon", "guayaba"]
+
+
+//Accesores
+join ( ) une todos los elementos de una matriz ( u objeto similar ) en una cadena y la devuelve .
+slice ( ) devuelve una parte del array dentro de un nuevo array empezando por inicio hasta fin ( fin noincluido ) .
+Metodos ya vistos en cadenas : tostring ( ) , indexof ( ) , lastIndexof ( ) , includes ( )
+
+
+let abecedario = ["a","b","c","d"]
+abecedario.join() //abcd || se transforma en una cadena de texto
+abecedario.join("-") //a-b-c-d || se transforma en una cadena de texto
+abecedario.join(",") //a,b,c,d || se transforma en una cadena de texto
+
+
+abecedario.slice(0,2) //["a", "b"] devuelve de la posicion 0 a las 2 sin incluir el 2
+
+
+
+//De repeticion
+filter ( ) crea un nuevo array con todos los elementos que cumplan la condición .
+forEach ( ) - ejecuta la función indicada una vez por cada elemento del array .
+
+
+let apellidos = ["lopez", "burguete", "tordera", "rodrigez", "soler", "benavent", "perez", "garcia"]
+apellidos.filter( ape =>  document.write(ape + "<br>"))
+apellidos.filter( 
+(ape) =>{
+
+  document.write(ape + "<br>")
+})
+
+
+apellido.filter(ape => ape.length < 6) //Devuelve un array con  ["lopez", "soler", "perez"]
+
+
+apellidos.forEach( ape =>  document.write(ape + "<br>"))
+apellidos.forEach( 
+(ape) =>{
+
+  document.write(ape + "<br>")
+})
+
+
+
+//Objeto Math
+
+METODOS
+
+Math.sqrt(25) //Devuelve la raíz cuadrada positiva de un número.
+Math.cbrt(27) //Devuelve la raíz cúbica de un número.
+
+Math.max(2,1,5,77,91,13,8,9) //Devuelve el mayor de cero o más números .
+Math.min(2,1,5,77,91,13,8,9) //Devuelve el más pequeño de cero o más números.
+
+Math.random() //Devuelve un numero entre el 0 y 1
+Math.random()*100 //Devuelve un numeor entre el 0 y el 100 con sus decimales
+Math.round(Math.random()*100) //Devuelve el valor de un número redondeado al número entero más cercano .
+Math.floor(4.8)//Devuelve 4 porque Devuelve el mayor entero menor que o igual a un número .
+Math.trunc (9.9) //Devuelve 9 porque Devuelve la parte entera del número x , la eliminación de los dígitos fraccionarios.
+
+PROPIEDADES
+Math.PI // Ratiio de la circuferencia d eun circulo respecto a su diametro
+Math.SQRT1_2 //Raiz cuadrada de 1/2
+Math.SQRT2 //Raiz cuadrada de 2
+
+Math.E - Constante de Euler , la base de los logaritmos naturales ,
+Math.LN2 - Logaritmo natural de 2 , aproximadamente 0.693
+Math.LN10 Logaritmo natural de 10 , aproximadamente 2.303
+Math.LOG2E Logaritmo de E con base 2 , aproximadamente 1.443
+Math.LOG10E Logaritmo de E con base 10 , aproximadamente 0.434
+
+
+//Console
+
+
+console.log("Hey") //Lanza un log en la consola
+console.clear() //Limpia la consola de comandos
+console.error("Error Critico") //Muestra la informacion en formato de error
+console.table(["manuel","jose","pepe","juan"]) //Tenemos que pasarle un objeto o array y este nos devuelve una tabla por consola
+console.warn("Cuidado") //Lanza una advertencia
+
+
+console.count() //Cuenta el numero de veces que ejecutamos la consola
+console.countReset() //Resetea esa cuenta
+
+console.group() //Crea un grupo
+console.group("frutas") //Crea un grupo
+console.groupEnd() //Cierras el grupo
+console.groupCollapsed() //Crea un grupo pero no lo saca abierto
+
+
+console.time() //Inicia un contador
+console.timeLog() //Nos dice que paso x tiempo desde que se ejecuto el comando anterior
+console.timeEnd() //Finaliza el contador
+
+TRUCOS
+
+console.log("%cta guay","color:red; background:#fff; padding:20px 100px")
+
+
+
+//El DOM (Document Objet Model)
+
+//Metodos de seleccion de elementos
+
+document.getElementById("container") //Selecciona un elemento por ID
+
+document.getElementsByTagName("p") // Selecciona todos los elementos que coincidan con el nombre de la etiqueta especificada. //Devuelve una coleccion
+
+document.queryselector(".title") // Devuelve el primer elemento que coincida con el grupo especificado de selectores.
+
+document.querySelectorAll(".section") // Devuelve todos los elementos que coincidan con el grupo especificado de selectores. //Devuelve una coleccion
+
+
+
+
+//Meotodos para Definir, Obtener y Eliminar valores de atributos
+
+//Pa ponernos en contesto el node elemento rangoEdad es un input de tipo range
+const rangoEdad = document.queryselector(".rangoEdad")
+
+rangoEdad.setAttribute("type","text") //Estamos cambiando el atributo type de este input
+rangoEdad.setAttribute("type","color")
+
+rangoEdad.getAttribute("type") //Devuelve el atributo type
+
+rangoEdad.removeAttribute("type") // Remueve el valor de un atributo
+rangoEdad.setAttribute("type","") //Con este existe el atributo pero remueves el valor que  tiene
+
+
+//Atributos Globales
+
+
+const titulo = document.queryselector(".title") //Esto es un h1
+titulo.setAttribute("contentEditable", "true") //Puedo editar el h1
+titulo.setAttribute("contentEditable", "false") //Ya no
+
+titulo.setAttribute("dir", "ltr") //Cambia la direccion del texto a la izquierda left-to-rigth
+titulo.setAttribute("dir", "rtl") //Cambia la direccion del texto a la izquierda rigth-to-left
+
+titulo.setAttribute("hidden", "true") //El elemento se oculta
+titulo.setAttribute("hidden", "false") //El elemento se oculta, porque da igual el valor que tenga si esta iniciado lo oculta
+
+titulo.removeAttribute("hidden") //Eliminamos el atributo y nos aparece de nuevo el elemento
+
+titulo.setAttribute("tabindex","0") //Nos deja hacerle focus al h1 como si fuera un input si le sacamos el numero se quita el focus el numero indica que elemento es a la hora de hacer tab
+
+titulo.setAttribute("title","jajaajaj xd") //Cambia el titulo que muestra cuando pasamos el raton por encima con el que nosotros pongamos
+
+
+
+//Atributos para input
+
+const input = document.querySelector(".input-normal")
+
+input.className //Devuelve el className que le hemos asignado que es input-normal
+input.value //Devuelve el valor de un input
+input.type = "color" //Cambiamos el tipo de input que estamos utilizando
+input.accept = "image/png" //Sirve para los input file para decir que solo acepte como archivo una imagen en png
+
+input.form = "formulario" //Permite utilizar un input fuera de un  formaulario y agrgarlo a el desde fuera
+input.minLength = "43" //Longitud del texto de ve ser de minimo 43 caracteres
+
+input.placeholder = "Escribe aqui..."
+input.required = true //Nos permite indicar si el input es requerido o no para que s eenvie el formulario
+
+
+
+//Atributo Style
+//Te permite acceder a las propiedades css aquellas propiedades que sean mas de una palabra van todo juntas y en formato camelCase
+
+const titulo = document.getElementById("titulo")
+
+titulo.style.color = "blue"
+titulo.style.backgroundColor = "#32b"
+
+
+//Clase, classList y metodos de classList
+
+const titulo = document.querySelector(".titulo")
+titulo.classList.add("grande") //Le agrega la clase grande al elemento
+titulo.classList.remove("grande") //remueve la  clase grande al elemento
+titulo.classList.item(0) //devuelve la primera clase
+titulo.classList.contains("grande") //devuelve true o false en funcion de tenga o no la clase especificada
+ 
+titulo.classList.toggle("grande") //En caso de que el elemento tenga la clase la saca y en el caso de que no lo tenga la pone
+titulo.classList.toggle("grande") //Devuelve true o false en funcion de tenga o no la clase
+titulo.classList.toggle("grande", true) // podemos forzarlo a que siempre la tenga
+
+titulo.classList.replace("grande", "mini") // remplaza una clase por otra
+
+
+
+//Obtencion y modificacion de elemntos
+
+const parrafo = document.querySelector(".parrafo")
+
+parrafo.textContent //Devuelve el texto que hay dentro del elemento sin importar el estilo que marque el usuario osea si coge el pavo y te oculta el elemento con un visibility: hidden te va seguir dando el textContent
+parrafo.innerHTML //Devuelve el contentido con el texto en html
+parrafo.outerHTML //Devuelve el elemento entero en html
+
+
+//Creacion de elementos
+
+
+//1
+
+const contenedor = document.querySelector(".container")
+
+const item = document.createElement("LI") //Nos crea un <li> es necesario ponerlo en MAYUSCULAS
+
+const textoDelItem = document.createTextNode("hola jamao") //Crea un texto
+
+item.appendChild(textoDelItem)
+
+contenedor.appendChild(item) 
+
+
+
+//2
+const contenedor = document.querySelector(".container")
+
+const item = document.createElement("LI") //Nos crea un <li> es necesario ponerlo en MAYUSCULAS
+
+item.innerHTML ="Este es un item de la lista"
+
+contenedor.appendChild(item) 
+
+
+
+//Agregar Muchos Elementos
+const contenedor = document.querySelector(".container")
+const fragment = document.createDocumentFragment()
+
+
+
+for(i = 0; i<20; i++){
+	const item = document.createElement("LI")
+	item.innerHTML = "Este es un item de la lista"
+	fragment.appendChild(item)
+}
+
+contenedor.appendChild(fragment)
+
+
+//Obtencion y Modificacion de childs
+//Imaginemos que el contenedor tiene ahora varios elementos hijos a dentro
+
+const contenedor = document.querySelector(".container")
+const primerHijo = contenedor.firstChild //Nos tira el primer hijo tenemos que tener en cuenta que le texto tambien puede ser el primer hijo
+const primerElementoHijo = contenedor.firstElementChild  //Nos tira el primer elemento que haya en el hijo
+const ultimoElementoHijo = contenedor.lastElementChild  //Nos tira el ultimo elemento que haya en el hijo
+const listaNodos = contenedor.childNodes //Nos devuelve toda la lista de hijos
+
+//No es un array pero si un objeto y por lo tanto lo podemos recorrer con un forEach
+listaNodos.forEach(nodo =>console.log(nodo))
+
+
+const hijos = contenedor.children //Nos salen solo las etiquetas html como nodos
+
+//Para recorrer esta coleccion
+
+for(hijo of hijos){
+	console.log(hijo)
+}
+
+
+console.log(primerHijo)
+console.log(primerElementoHijo)
+console.log(ultimoElementoHijo) 
+
+console.log(listaNodos)
+
+console.log(hijos)
+
+
+
+//Metodos Child
+const contenedor = document.querySelector(".container")
+const parrafo = document.createElement("P")
+const h2_nuevo = document.createElement("H2")
+h2_nuevo.innerHTML = "Titulo"
+
+const h2_viejo = document.querySelector(".h2")
+
+contenedor.replaceChild(h2_nuevo, h2_viejo) //Replaza un elemento por otro
+contenedor.removeChild(h2_viejo)
+
+
+let respuesta = contenedor.hasChildNodes() //Devuelve true or false en funcion de tenga hijos o no el contenedor
+
+//Propiedades de parents
+
+const h2 document.querySelector(".h2")
+
+console.log(h2.parentElement) //Te devuelve el elemento padre
+console.log(h2.parentNode) //Te devuelve el elemento padre
+
+
+//Propiedades de Siblings
+
+const h2 document.querySelector(".h2")
+
+console.log(h2.previousElementSibling) //Te devuelve el anterior elemento hermano
+console.log(h2.nextElementSibling) //Te devuelve el siguiente elemento hermano
+console.log(h2.lastElementSibling) //Te devuelve el ultimo elemento hermano
+
+
+
+//Nodos Extras
+
+const div = document.querySelector(".div-3")
+console.log(div.closest(".div")) //Nos selecciona elelemento ascendente mas cercano
+
+
+
+//Window
+
+
+let ventana = window.open("https://www.youtube.com/channel/UC4Bp0euKLbYgoGeJopYTlVg") //Lanza una vetnana emergente
+ventana.close() //Cierra la ventana
+
+venatana.closed //Esta propiedad te devuelve true cuando la ventana esta cerrada
+
+venatana.stop() //Es el boton de cancelar cuando le das a refreescar
+
+//viene de window pero se puede omitir
+alert("hola") //lanza una alerta
+print() // imprime la pagina
+prompt("Cuantos años tienes?") // lanza un cuadro de dialogo con un input 
+confirm("¿Estas seguro que deseas salir del sitio web?") //cuadro de dialogo si o no que ddevuelve true o false en funcion
+
+
+const screen = window.screen // devuelve una referencia  del objeto de pantalla asociado con la ventana.
+const screenLeft = window.screenLeft //Indicala posicion de la ventana en la pantalla hprizontalmente
+const screenTop = window.screenTop //Indica la posicion en la pantalla verticlamente
+
+
+console.log(screen)
+console.log(screenLeft)
+console.log(screenTop)
+
+
+const scrollX = window.scrollX 
+const scrollY = window.scrollY
+
+console.log(scrollX) //indica la posicion scrolleada en el eje horizontal
+console.log(scrollY) //indica la posicion scrolleada en el eje vertical
+
+
+window.scrollTo(0,100) //The desplaza 100 px verticlamente
+
+//Location
+ 
+window.location.href  //devuelve el href (URL) de la pagina actual
+window.location.hostname //devuelve el nombre de dominio del servidor web
+window.location.pathname //devuelve la ruta y el noabre de archivo de la pagina actual
+window.location.protocol //devuelve el protocolo web utilizado (http: o https :)
+window.location.assign() //carga un nuevo documento
+
+
+
+//Eventos
+
+//1
+
+const btn = document.querySelector(".btn")
+
+btn.addEventListener("click", saludar)
+
+function saludar(){
+	alert("hola")
+	btn.removeEventListener("click", saludar) //Remueve el evento
+}
+
+
+//2
+
+const btn = document.querySelector(".btn")
+
+btn.addEventListener("click", ()=>{
+	alert("hola")
+
+})
+
+//3
+const btn = document.querySelector(".btn")
+
+btn.addEventListener("click", (e)=>{
+	console.log(e) //La e nos tira el event que se acaba de realizar
+	console.log(e.target) //nos va mostrar el html de la cosa que desencadeno el evento
+
+})
+
+
+//MouseEvent
+
+
+"click" -> Ocurre un click
+"dblclick" -> Ocurre un doble click
+"mouseover" -> Ocurre cuando el puntero se mueve sobre un elemento o sobre uno de sus hijos
+"mouseout" -> Ocurre cuando se mueve le puntero fuera de un elemento o de sus elementos secundarios
+
+"contextmenu" -> ocurre con un click en el boton derecho en un elemento para abrir un menu contextual
+"mouseenter" -> ocurre cuando el puntero se mueve sobre un elemento 
+"mouseleave" -> ocurre cuando el puntero se mueve fuera d eun elemento
+"mouseup" -> ocurre cuando el ususario suelta un boton del mouse sobre un elemento
+"mousedown" -> ocurre cuando el ususario suelta un boton del mouse sobre un elemento
+"mousemove" -> ocurr cuando el puntero se mueve mientras esta sobre un elemento
+
+//Eventos de teclado
+const input = document.querySelector(".input")
+
+input.addEventListener("keydown", (e)=>{
+	console.log("una tecla fue presionada")
+})
+
+input.addEventListener("keypress", (e)=>{
+	console.log("una usuario presiono una tecla")
+})
+
+input.addEventListener("keyup", (e)=>{
+	console.log("una tecla fue soltada")
+})
+
+
+
+//Eventos de interfaz
+
+const img = document.querySelector(".img-prueba")
+
+img.addEventListener("error",()=>{
+	console.log("ha ocurrido un error")
+})
+
+//Cuando carga el sitio 
+addEventListener("load",()=>{
+	console.log("ha cargado el sitio")
+})
+
+
+//Antes de que salgas del sitio
+addEventListener("beforeunload",()=>{
+	console.log("estoy por irme")
+})
+
+//Cuando te fuiste del sitio
+addEventListener("unload",()=>{
+	console.log("ya me fui")
+})
+
+//cuando se cambia el tamaño de la ventana
+addEventListener("resize",()=>{
+	console.log("cambiando el tamaño de la ventana")
+})
+
+
+//cuando haces scroll en la pantalla
+addEventListener("scroll",()=>{
+	console.log("estoy scrolleando")
+})
+
+
+//El siguienhte solo se aplica a los <input> o <textarea>
+
+const  input = document.querySelector(".input")
+input.addEventListener("select",()=>{
+	console.log("se ha  seleccionado")
+})
+
+
+const input = document.querySelector(".input-prueba")
+const contenedor = document.querySelector(".seleccionado")
+
+input .addEventListener("select", (e)=>{
+	let start = e.target.selectionStart;
+	let end = e.target.selectionEnd
+	Let textoCompleto = input.value
+	contenedor.innerHTML = textoCompleto.substring(start, end) 
+})
+
+
+
+//Timers
+
+//1
+setTimeout(()=>{
+	document.write("hola")
+}, 2000) //Esta funcion recive como parametros una funcion a ejecutar y en cuanto tiempo se ejecutara
+
+
+//2
+const saludar = () =>{
+	document.write("hello")
+}
+
+
+setTimeout(saludar, 2000)
+
+
+//3
+const temporizador = setTimeout(()=>{
+
+	document.write("hola")
+},2000)
+
+
+clearTimeout(temporizador)//con esto terminamos el temporizador
+
+
+
+
+const intervalo = setInterval(()=>{
+	document.write("hola")
+},2000)//Ejecuta la funcion quie le pases cada x tiempo
+
+
+clearInterval(intervalo)
+
+
+
+//Control de flujo y manejo de errores
+
+//Ambito de las variables
+
+//Ambito1
+let nombre = "jorge"
+
+
+{
+
+	//Ambito2
+	let nombre = "pedro"
+	alert(nombre)
+
+}
+
+alert(nombre)
+
+
+
+
+//Switch
+
+let fruta = "Manzana"
+
+switch(fruta){
+	case "Banana" : 
+		console.log("Esta fruta es amarilla")
+		break
+		
+	case "Manzana" : 
+		console.log("Esta fruta es roja, verde o amarilla")
+		break
+		
+	case "Pera" : 
+		console.log("Esta fruta es verde")
+		break
+	
+	case "Mango" : 
+		console.log("Esta fruta es naranja por dentro")
+		break
+		
+	default:
+		console.log("Eso no es una fruta")
+		break
+}
+
+
+
+
+//Manejo de errores
+
+ugwgiu //Esto tira un error
+
+
+
+try{ //Try nos permite probar a realizar el codigo encerrado entre sus llaves
+ugwgiu
+
+}catch(e){ //El catch captura el error
+	console.log(e)
+	console.log(typeof e) // Nos tira el tipo de error
+}finally{ //Este se ejecuta pase lo que pase
+
+	console.log("termino el try")
+}
+
+
+
+const pruebaTry = () =>{
+	
+	try{
+		return 1
+	}
+	catch(e){
+		return 2
+	}finally{
+	
+		return 3
+	}
+
+}
+
+console.log(pruebaTry()) //Siempre va a devolver 3 por que el finally se ejecuta si o si
+
+
+
+//1
+
+try{
+	throw "exception - error" //Cuanbdo se ejecuta este trozo de codigo direcatmente se pasa el error al catch porque tira una excepcion
+}
+catch(e){
+	console.log(e)
+}finally{
+	
+}
+
+//2
+try{
+	throw {
+		error: "eddy-exception",
+		description: "pues ha ocurrido porque me da a mi la gana"
+	}
+}
+catch(e){
+	console.log(e)
+}finally{
+	
+}
+
+//3
+
+
+try{
+	throw ["excepcionFatal", "porque si crack"]
+}
+catch(e){
+	console.log(e)
+}finally{
+
+
+}
+
+
+
+//Callback ->>Es una funcion dentro de una funcion
+
+
+function prueba(callback){
+	callback("pedro")
+}
+
+
+
+function decirNombre(nombre){
+	console.log(nombre)
+}
+
+
+prueba(decirNombre)
+
+
+
+prueba((nombre)=>{
+	console.log(nombre)
+})
+
+
+
+//Example
+
+class Persona{
+	constructor(nombre, instagram){
+		this.nombre = nombre
+		this.instagram = instagram
+	}
+	
+	
+	
+}
+
+
+console.log(new Persona("edgar lopez", "@eltete_edgar"))
+
+
+const datosPersonas = [
+	["edgar lopez", "@eltete_edgar"],
+	["nerea soler", "@helmets7"],
+	["alberto del moral", "@betovcf"]
+]
+
+const personas = []
+
+for(let i =0; i<datosPersonas.length; i++){
+	personas[i] = new Persona(datosPersonas[i][0],datosPersonas[i][1])
+}
+
+
+console.log(personas)
+
+
+
+
+
+//Example simplify with callback
+
+
+const obtenerPersona = (id,cb) =>{
+	if(personas[id] == undefined){
+		cb("No se ha encontrado la persona")
+	}else{
+		cb(null, personas[id], id)
+	}
+}
+
+
+
+obtenerPersona(1,(err, persona,id)=>{
+	if(err){
+		console.log(err)
+	}else{
+		console.log(persona.nombre)
+		console.log(obtenerInsta(id,(err, instagram)=>{
+			if(err){
+				console.log(err)
+			}else{
+				console.log(instagram)
+			}
+		}))
+	}
+})
+
+
+const obtenerInsta = (id,cb) =>{
+	if(personas[id].instagram == undefined){
+		cb("No se ha encontrado la persona")
+	}else{
+		cb(, personas[id].instagram)
+	}
+}
+
+
+
+
+
+//Promesas
+
+
+let nombre = "edgar"
+
+const promesa = new Promise((resolve, reject)=>{
+	if(nombre !== "edgar"){
+		reject("El nombre no es correcto")
+	}else{
+		resolve("El nombre es correcto")
+	}	
+
+})
+
+
+console.log(promesa) //Devuelve un objeto encapsulado y no podemos acceder a sus valor
+
+
+//para acceder
+
+promesa.then((result)=>{
+	console.log(result)//Lanza edgar
+}).catch((e)=>{
+	console.log(e) //En el caso de fallar a la hora de devolver la promesa nos tira el erro por este catch
+})
+
+
+
+
+
+//Pasamos el ejemplo de callback a promesas
+
+class Persona{
+	constructor(nombre, instagram){
+		this.nombre = nombre
+		this.instagram = instagram
+	}
+	
+	
+	
+}
+
+
+console.log(new Persona("edgar lopez", "@eltete_edgar"))
+
+
+const datosPersonas = [
+	["edgar lopez", "@eltete_edgar"],
+	["nerea soler", "@helmets7"],
+	["alberto del moral", "@betovcf"]
+]
+
+const personas = []
+
+for(let i =0; i<datosPersonas.length; i++){
+	personas[i] = new Persona(datosPersonas[i][0],datosPersonas[i][1])
+}
+
+const obtenerPersona = (id) => {
+	return new Promise((resolve, reject)=>{
+		if(personas[id] == undefined){	
+			reject("No se ha encontrado la persona")
+		}else{
+			resolve(personas[id])
+		}
+		
+	})
+}
+
+
+const obtenerInstagram = (id) =>{
+	return new Promise((resolve, reject)=>{
+		if(personas[id].instagram == undefined){	
+			reject("No se ha encontrado el instagram")
+		}else{
+			resolve(personas[id].instagram)
+		}
+		
+	})
+}
+
+let id = 1
+
+obtenerPersona(id).then((person)=>{
+	console.log(person.nombre)
+	return obtenerInstagram(id)
+
+}).then((instagram) =>{
+	console.log(instagram)
+}).catch((e)=>{
+	console.log(e)
+})
+
+
+//Await & Async
+
+const objeto = {
+	propiedad1: "valor1",
+	propiedad1: "valor2",
+	propiedad1: "valor3"
+}
+
+
+const obtenerInformacion = () =>{
+
+	return new Promise((resolve, reject)=>{
+		setTimeout(()=>{resolve(objeto)}, 3000)
+	})
+}
+
+
+//1
+obtenerInformacion().then(result => console.log(result))
+
+
+
+//2
+
+const mostrarResultado = async ()=>{
+	let resultado = await obtenerInformacion()
+	
+	console.log(resultado)
+
+}
+
+
+
+//Datos Estructurados (JSON -> JavaScript Objet Notation)
+
+//Diferencia Array Asociativo de JSON
+
+
+//Array Asociativo
+let objeto = {
+	nombre: "edgar",
+	edad: 5
+}
+
+//JSON
+let objeto = {
+	"nombre": "edgar",
+	"edfda": 5,
+	"casado": false
+}
+
+
+
+//JSON serializado
+let jsonSerializado = '{"nombre": "edgar","edfda": 5,"casado": false}'
+
+
+//JSON deserializado
+let jsonDeserializado = {
+	"nombre": "edgar",
+	"edfda": 5,
+	"casado": false
+}
+
+JSON.stringify(jsonDeserializado) //Serializo el objeto y lo transofrmo en cadena de texto
+JSON.parse(jsonSerializado) //Deserializo la cadena de texto y lo transoformo en un objeto (JSON)
+
+
+//AJAX (Es necesario tener instalado un servidor como XAMPP para que arranque)
+
+//GET
+const peticion = new XMLHttpRequest()
+
+peticion.addEventListener("load", ()=>{
+    if( peticion.status == 200){
+        console.log(peticion.readyState)
+        console.log(peticion.response)
+        console.log(peticion.status)
+        
+        console.log(JSON.parse(peticion.response))
+        console.log(JSON.parse(peticion.response).nombre)
+    }
+
+})
+
+
+peticion.open("GET", "data.txt")
+peticion.send()
+
+//console.log(peticion)
+
+
+
+//POST
+
+const peticion = new XMLHttpRequest()
+
+peticion.addEventListener("load", ()=>{
+    if( peticion.status == 200 || peticion.status == 201){
+    
+        console.log(JSON.parse(peticion.response))
+     
+    }
+
+})
+
+
+peticion.open("POST","https://reqres.in/api/users");
+
+peticion.setRequestHeader("Content-type", "application/json;charset=UTF8")
+peticion.send(JSON.stringify({
+    "nombre": "edgar",
+    "trabajo": "desarrollador web"
+}))
+
+//Fetch
+
+//GET
+fetch("https://api.jikan.moe/v4/random/anime")
+    .then((res)=>{return res.text()}) //Devuelve res.text(9) encapsulado
+    .then((res)=>{console.log(JSON.parse(res))}) //Pasamos la repsuesta a JSON
+
+
+    
+ fetch("https://api.jikan.moe/v4/random/anime")
+    .then((res)=>{ return res.json()}) //Devuelve respuuesta encapsulado en formato JSON
+    .then((res)=>{ console.log(res)})
+
+
+
+//POST
+
+
+fetch("https://reqres.in/api/users",{
+
+    method : "POST",
+    body: JSON.stringify({
+        "nombre":"Edgar",
+        "apellido":"Lopez"
+    }),
+    headers:{"Content-type" : "application/json"}
+
+})
+    .then(res => res.json())
+    .then(res=>console.log(res))
+
+
+
+
+
+const imgContainer = document.querySelector(".img")
+
+
+fetch("bobesponja.webp")
+    .then(res => res.blob()) //Desencapsulando
+    .then(img => imgContainer.src = URL.createObjectURL(img))
+
+
+
+
+//LIBRERIA AXIOS
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+axios("data.txt")
+    .then(res=>{
+        console.log(res)
+        console.log(res.data)
+    })
+
+
+axios.get("data.txt")
+    .then(res=>{
+        console.log(res)
+        console.log(res.data)
+    })
+
+axios.post("data.txt")
+    .then(res=>{
+        console.log(res)
+        console.log(res.data)
+    })
+
+
+
+
+//ASYNC & AWAIT
+
+
+const getAnime = async () =>{
+
+    let peticion = await fetch("https://api.jikan.moe/v4/anime")
+    let result = await peticion.json()
+
+
+    console.log(result)
+    console.log(result.data)
+
+}
+
+getAnime()
+
+
+//Prototypes
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code Examples
+
+const materias = {
+		fisica: ["Perez","pedro","pepito","cofla","maria"],
+		programacion: ["Dalto","pedro","juan","pepito"],
+		logica: ["Hernandez","pedro","juan","pepito","cofla","maria"],
+		quimica: ["Rodriguez","pedro","juan","pepito","cofla","maria"]
+	}
+	
+const obtenerInformacion = (materia)=>{
+	
+	if (materias[materia] !== undefined){
+		return [materias[materia],materia,materias];
+	} else {
+		return materias;
+	}
+}
+
+const mostrarInformacion = (materia)=>{
+	let informacion = obtenerInformacion(materia);
+
+if (informacion !== false) {
+	let profesor = informacion[0][0];
+	alumnos = informacion[0];
+	alumnos.shift();
+	document.write(`El profesor de <b>${informacion[1]}</b> es: <b style="color:red">${profesor}</b><br>
+		Los alumnos son: <b style="color:blue">${alumnos}</b><br><br>
+		`);
+}
+}
+
+const cantidadDeClases = (alumno)=>{
+	let informacion = obtenerInformacion();
+	let clasesPresentes = [];
+	let cantidadTotal = 0;
+	for (info in informacion) {
+		if (informacion[info].includes(alumno)) {
+			cantidadTotal++;
+			clasesPresentes.push(" "+ info);
+		}
+	}
+	return `<b style='color:blue'>
+	${alumno}</b> está en <b>${cantidadTotal} clases: <b style='color:green'>${clasesPresentes}</b>
+	<br><br>
+	`;
+}
+
+
+mostrarInformacion("fisica");
+mostrarInformacion("quimica");
+mostrarInformacion("programacion");
+mostrarInformacion("logica");
+
+document.write(cantidadDeClases("cofla"))
+document.write(cantidadDeClases("pedro"))
+
+
+---------
+
+let alumnos = [{
+		nombre: "Edgar",
+		email:"edgarlopezcalomarde@gmail.com",
+		materias: ["css", "javascript","html"]
+	},{
+		nombre: "Pepe",
+		email:"pepito@gmail.com",
+		materias: ["css", "javascript","html"]
+	},{
+		nombre: "Lola",
+		email:"lollita@gmail.com",
+		materias: ["css", "javascript","html"]
+	},{
+		nombre: "Ruben",
+		email:"rubencillo@gmail.com",
+		materias: ["css", "javascript","html"]
+	},{
+		nombre: "Beto",
+		email:"alberto@gmail.com",
+		materias: ["css", "javascript","html"]
+	}
+
+]
